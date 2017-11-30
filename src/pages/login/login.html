@@ -5,8 +5,17 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+<style>.content {
+    max-width: 1750px;
+    margin: 150px;
+    background: #0A52AF;
+    padding:10px;
+    
+}</style>
 <!-- Creating formgroup, lot of erros what i cant figure out but looks like they wont affect to app anyhow :P Aleksi Ukkonen 1601558 -->
 <ion-content padding>
+   
+    <img src="/assets/imgs/kuala.jpg" alt="HTML5 Icon" style="width:1750px;height:400px;">
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
  
 <!-- Making email formController Aleksi Ukkonen 1601558 -->
@@ -15,6 +24,8 @@
       <ion-input #email formControlName="email" type="email" placeholder="Your email address"
         [class.invalid]="!loginForm.controls.email.valid &&
           loginForm.controls.email.dirty"></ion-input> 
+         
+        
     </ion-item>
     <!-- Making errormessage if email is not valid Aleksi Ukkonen 1601558 -->
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
@@ -44,5 +55,5 @@
   <button ion-button block clear (click)="createAccount()">
     Create a new account
   </button>
-
+  <img src="/assets/imgs/new-york.jpg" alt="HTML5 Icon" style="width:1750px;height:200px;">
 </ion-content>

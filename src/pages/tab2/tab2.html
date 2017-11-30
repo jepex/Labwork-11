@@ -1,18 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    </ion-buttons>
-    <ion-title>Targeted CV</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      Notepad
+    </ion-title>
   </ion-navbar>
 </ion-header>
  
-<ion-content padding>
-My interested job was Mobile Application Developer on a Irving, TX, United States. 
- <br>
- Job reguires experience with Node, Angular 2, Ionic and Ionic 2
- <br>
- I'm currently learning about those skills so i hope i will have good knowlegde about these on near future
+<ion-content>
+  <ion-row>
+    <ion-col col-9>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="newItem" placeholder="New note"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <button ion-button (click)="addItem()">Add!</button>
+    </ion-col>
+  </ion-row>
+ 
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of shoppingItems | async">
+      <ion-item>
+        {{ item.$value }}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <img src="/assets/imgs/to-do.jpg" alt="HTML5 Icon" style="width:1200px;height:600px;">
 </ion-content>
